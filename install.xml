@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>Change Default Product Sort Order by quantity </name>
+	<version>1.0</version>
+	<author>SHAMSAN</author>
+	<code>change_default_product_sort_order_to_order_by_qty</code>
+	
+	<file path="catalog/controller/product/{catalog,category,manufacturer,search,special}.php">
+        <operation>
+            <search><![CDATA[$sort = 'p.sort_order';]]></search>
+            <add position="replace"><![CDATA[$sort = 'p.quantity';]]></add>
+        </operation>
+		 <operation>
+            <search><![CDATA[$order = 'ASC';]]></search>
+            <add position="replace"><![CDATA[$order = 'DESC';]]></add>
+        </operation>
+		</file>
+
+</modification>
